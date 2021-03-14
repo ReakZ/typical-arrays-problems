@@ -13,19 +13,26 @@ exports.min = function min(array) {
 };
 
 exports.max = function max(array) {
-        if (array) {
-        let min = array.length ? array[0] : 0;
+    if (array) {
+        let max = array.length ? array[0] : 0;
         for (let index = 0; index < array.length; index++) {
-            if (array[index] < min) {
-                min = array[index];
+            if (array[index] > max) {
+                max = array[index];
             }
         }
-        return min;
+        return max;
     } else {
         return 0;
     }
 };
 
 exports.avg = function avg(array) {
-    return 0;
+    if (array) {
+    let avg=array.length>0?array[0]:0
+    avg=array.reduce((prev,cur)=>prev+cur,0)
+    return avg!=0?avg/array.length:0
+    }
+    else{
+        return 0
+    }
 };
